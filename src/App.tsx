@@ -1,8 +1,10 @@
 import './App.css';
+import RegisterPage from './pages/register/register.page';
 
 function App() {
   return (
-<h1 className='text-green-700'>Welcome friends!</h1>
+
+    <RegisterPage />
   );
 }
 
