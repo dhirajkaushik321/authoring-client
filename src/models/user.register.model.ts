@@ -1,4 +1,4 @@
-type User = {
+type RegisterUser = {
     username: string;
     email: string;
     password: string;
@@ -6,4 +6,4 @@ type User = {
 
 };
 
-export default User;
+export default RegisterUser;
