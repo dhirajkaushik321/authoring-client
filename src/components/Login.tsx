@@ -6,18 +6,15 @@ import Input from "./Input";
 import User from '../models/user.model';
 
 const fields=loginFields;
-// let fieldsState = {};
-// let loginData:User;
-// fields.forEach(field=>fieldsState[field.id]='');
 
 export default function Login(){
-    const [loginState,setLoginState]=useState<User>();
+    const [loginState,setLoginState]=useState<User>({username:"",password:"",email:""});
 
-    const handleChange=(e)=>{
-        setLoginState({...loginState,[e.target.id]:e.target.value})
+    const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+        setLoginState({...loginState,[e.target.name]:e.target.value})
     }
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=(e:React.FormEvent)=>{
         e.preventDefault();
         authenticateUser();
     }
@@ -35,13 +32,12 @@ export default function Login(){
                         <Input
                             key={field.id}
                             handleChange={handleChange}
-                            value={loginState[field.id]}
+                            value={loginState[field.name]}
                             labelText={field.labelText}
                             labelFor={field.labelFor}
                             id={field.id}
                             name={field.name}
                             type={field.type}
-                            isRequired={field.isRequired}
                             placeholder={field.placeholder}
                     />
                 

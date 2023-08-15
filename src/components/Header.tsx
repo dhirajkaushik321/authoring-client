@@ -1,11 +1,16 @@
 import {Link} from 'react-router-dom';
-
+type Props ={
+    heading:string,
+    paragraph:string,
+    linkName:string,
+    linkUrl:string
+  }
 export default function Header({
     heading,
     paragraph,
     linkName,
     linkUrl="#"
-}){
+}:Props){
     return(
         <div className="mb-10">
             <div className="flex justify-center">
