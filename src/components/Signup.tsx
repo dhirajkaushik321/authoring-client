@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { registrationFields} from "../constants/formFields";
 import FormAction from "./FormAction";
 import FormExtra from "./FormExtra";
@@ -11,12 +11,31 @@ const fields=registrationFields;
 const registerApi = process.env.REACT_APP_REGISTER_API;
 
 export default function Register(){
+//write registrationState validation logi in useEffect that will execute whenever any of the state variable changes
+
+
+
     const [registrationState,setRegistrationState]=useState<RegisterUser>({username:"",password:"",email:"",confirmPassword:""});
+    //create registrationValidationState
+    const [registrationValidationError,setRegistrationValidationError]=useState<RegisterUser>({username:"",password:"",email:"",confirmPassword:""});
     const [successMessage,setSuccessMessage]=useState<string>("")
     const [errorMessage,setErrorMessage]=useState<string>("") 
-    const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-        setRegistrationState({...registrationState,[e.target.name]:e.target.value})
-    }
+    //wrap below function in useCallback
+    //to avoid re-render on every change of state
+
+    const validateField = useCallback((fieldName: string, value: string) => {
+        setRegistrationValidationError(prevErrors => ({
+          ...prevErrors,
+          [fieldName]: value ? "" : `${fieldName} is required.`
+        }));
+      }, []);
+      
+    
+        const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            const { name, value } = e.target;
+            setRegistrationState(prevState => ({ ...prevState, [name]: value }));
+            validateField(name, value); // Pass the latest value to the validateField function
+          };
 
     const handleSubmit=(e:React.FormEvent)=>{
         e.preventDefault();
@@ -50,7 +69,7 @@ export default function Register(){
         <div className="-space-y-px">
             {
                 fields.map(field=>
-                        <Input
+                       < ><Input
                             key={field.id}
                             handleChange={handleChange}
                             value={registrationState[field.name]}
@@ -61,6 +80,8 @@ export default function Register(){
                             type={field.type}
                             placeholder={field.placeholder}
                     />
+                    {registrationValidationError[field.name] && <Message type={"error"} size='small' message={registrationValidationError[field.name]} />}
+                    </>
                 
                 )
             }
@@ -68,8 +89,8 @@ export default function Register(){
 
         <FormExtra/>
         <FormAction  action='submit' handleSubmit={handleSubmit} text="Register"/>
-        {successMessage && <Message type={"success"} message={successMessage} />}
-      {errorMessage && <Message type={"error"} message={errorMessage} />}
+        {successMessage && <Message type={"success"} message={successMessage} disappear />}
+      {errorMessage && <Message type={"error"} message={errorMessage} disappear/>}
       </form>
     )
 }

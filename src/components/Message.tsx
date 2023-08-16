@@ -1,42 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface MessageProps {
+type MessageProps= {
   type: 'error' | 'success' | 'warning';
   message: string;
+  disappear?:boolean
+  size?:'small' | 'big'
 }
 
-const Message: React.FC<MessageProps> = ({ type, message }) => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 1000); // Set the duration in milliseconds (3 seconds in this case)
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
+const Message: React.FC<MessageProps> = ({ type, message,disappear,size='big' }) => {
+    const [show,setShow] =useState<boolean>(true)
   let bgColor = '';
   let textColor = '';
-  let animation = '';
+useEffect(()=>{
+if(disappear){
+    setTimeout(() => { setShow(false) }, 2000)
 
+}
+})
   switch (type) {
     case 'error':
       bgColor = 'bg-red-500';
       textColor = 'text-white';
-      animation = 'animate-fadeInDown';
       break;
     case 'success':
       bgColor = 'bg-green-500';
       textColor = 'text-white';
-      animation = 'animate-fadeInDown';
       break;
     case 'warning':
       bgColor = 'bg-yellow-500';
       textColor = 'text-black';
-      animation = 'animate-fadeInDown';
       break;
     default:
       bgColor = 'bg-gray-500';
@@ -44,13 +36,9 @@ const Message: React.FC<MessageProps> = ({ type, message }) => {
   }
 
   return (
-    <div
-      className={`p-4 ${bgColor} ${textColor} rounded shadow-md ${
-        isVisible ? animation : 'animate-fadeOutUp'
-      }`}
-    >
+    show ? <div className={`${size==='small'?'p-2':'p-4'} ${bgColor} ${textColor} rounded shadow-md`}>
       {message}
-    </div>
+    </div>:<></>
   );
 };
 
