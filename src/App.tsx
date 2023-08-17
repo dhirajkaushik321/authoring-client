@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import SignupPage from './pages/signup/signup.page';
 import LoginPage from './pages/login/login.page';
+import QuizApp from './pages/quiz/quiz.page';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
             <Route path="/" element={<LoginPage/>} />
             <Route path="/signup" element={<SignupPage/>} />
+            <Route path="/quiz" element={<QuizApp/>}/>
         </Routes>
       </BrowserRouter>
     </div>
