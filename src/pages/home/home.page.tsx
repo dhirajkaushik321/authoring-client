@@ -1,13 +1,11 @@
-import Login from "../../components/Navbar";
-import Header from "../../components/Carousel";
 import Navbar from "../../components/Navbar";
-import Carousel from "../../components/Carousel";
+import CarouselComponent from "../../components/CarouselComponent";
 
 export default function HomePage(){
     return(
         <>             
             <Navbar/>
-            <Carousel />
+            <CarouselComponent />
         </>
     )
 }
