@@ -53,8 +53,7 @@ export default function Register(){
             await axios.post(
                 registerApi,registrationState)
                 setSuccessMessage('User registered successfuly!')
-                // alert(`User registered successfuly!`);
-        
+                // alert(`User registered successfuly!`);        
             }
         }
      catch (error) {
