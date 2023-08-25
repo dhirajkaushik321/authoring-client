@@ -1,26 +1,29 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-// import carousal_img1 from '../images/carousal_educationWebsite.jpg';
-// import carousal_img2 from '../images/carousal_educationWebsite2.jpg';
-// import carousal_img3 from '../images/carousal_educationWebsite3.jpg';
-import carousal_img1 from '../images/c_img1.jpg';
-import carousal_img2 from '../images/c_img2.jpg';
+import carousal_img1 from '../images/c_img3.jpg';
+import carousal_img2 from '../images/c_img3.jpg';
 import carousal_img3 from '../images/c_img3.jpg';
 
 const CarouselComponent: React.FC = () => {
   const carouselImages = [carousal_img1, carousal_img2, carousal_img3];
-  return (    
-      <Carousel>
-        {carouselImages.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} style={{ width: '100%', height: '100%' }} />
-          </div>
-        ))}
-      </Carousel>    
+  return (
+    <>      
+      {/* <div className="max-h-full h-screen flex items-center justify-center">      
+        <div className="max-w-full w-full"> */}
+          <Carousel>
+            {carouselImages.map((image, index) => (
+              <div key={index}>
+                <img src={image} alt={`Slide ${index + 1}`} style={{ width: '90%', height: '90%' }} />
+              </div>
+            ))}
+          </Carousel>
+        {/* </div>
+      </div> */}
+    </>
   );
 
-  
+
 };
 
 /*

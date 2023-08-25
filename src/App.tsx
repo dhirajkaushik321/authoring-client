@@ -11,17 +11,19 @@ import HomePage from './pages/home/home.page';
 
 function App() {
   return (
-    <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-md w-full space-y-8">
-     <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<LoginPage/>} />
-            <Route path="/signup" element={<SignupPage/>} />              
-            <Route path="/home" element={<HomePage/>}/>
-        </Routes>
-      </BrowserRouter>
+    // <div className="max-h-full h-screen flex items-center justify-center mt-auto py-12 px-4 sm:px-6 lg:px-8">
+    // <div className="max-w-full w-full space-y-8">
+    <div className="max-h-full h-screen flex items-center justify-center">
+      <div className="max-w-full w-full">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/home" element={<HomePage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
-  </div>
   );
 }
 

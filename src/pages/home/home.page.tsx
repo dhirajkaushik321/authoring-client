@@ -1,15 +1,24 @@
 import Navbar from "../../components/Navbar";
 import CarouselComponent from "../../components/CarouselComponent";
-import TempComponent from "../../components/TempComponent";
+import CuratedContent from "../../components/CuratedContent";
+// import { Grid } from 'tailwindcss/components';
 
 export default function HomePage(){
+    
     return(
         <>     
-            {/* <div className="p-1"><Navbar/></div>                    
-            <div className="p-1"><CarouselComponent /></div> */}
+      
             <Navbar/>
-            <CarouselComponent />
-            <TempComponent />
+            <CarouselComponent /> 
+            
+          <div className="columns-2 bg-blend-color">
+            <CuratedContent />
+            <CuratedContent />
+          </div>
+          
+                  
+            
+      
         </>
     )
 }
