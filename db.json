@@ -1,0 +1,112 @@
+{
+  "CourseDb": [
+    {
+      "id": 1,
+      "courseName":"Reactjs", 
+      "description": "Desc", 
+      "thumbnail":"logo.jpg", 
+      "duration":"20 Hr"
+    },
+    {
+      "id": 2,
+      "courseName":"Typescript", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 3,
+      "courseName":"Angular", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 4,
+      "courseName":"JS", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 5,
+      "courseName":"Node", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 6,
+      "courseName":"Mongo", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 7,
+      "courseName":"Html", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 8,
+      "courseName":"CSS", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 9,
+      "courseName":"Bootstrap", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 10,
+      "courseName":"SQL", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 11,
+      "courseName":"tailwindcss", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 12,
+      "courseName":"font-awesome", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    },
+    {
+      "id": 13,
+      "courseName":"MERN", 
+      "description": "type saftey", 
+      "thumbnail":"logo.jpg", 
+      "duration":"5 Hours 30 Minutes"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
